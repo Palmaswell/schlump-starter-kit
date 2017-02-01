@@ -10,10 +10,9 @@
     "start": "cross-env OUTDIR=docs yarn serve && yarn build:watch",
     "serve": "browser-sync start --config tasks/browser-sync.js --serveStatic docs --files docs",
     "build:css": "babel-node tasks/css.js --presets es2015,stage-2",
-    "build:watch": "babel-node tasks/watch.js --presets es2015,stage-2",
-    "build:pages": "schlump --dest-statics=./docs/ --dest=./docs --scoped-css=./src/scss/_scoped.css --css-variables",
-    "build:watch:css": "chokidar \"src/**/*.scss\" \"src/**/*.css\" --initial --command \"yarn build:css\"",
+    "build:pages": "schlump --dest-statics=./docs/ --dest=./docs --scoped-css=./src/css/_scoped.css --css-variables",
     "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\"  --initial --command \"yarn build:pages\"",
+    "build:watch": "babel-node tasks/watch.js --presets es2015,stage-2",
     "build:watchold": "yarn build:css && (yarn build:watch:pages & yarn build:watch:css)"
   },
   "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
