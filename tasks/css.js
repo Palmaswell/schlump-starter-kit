@@ -2,7 +2,8 @@ import {resolve} from 'path';
 import {writeFile} from 'fs';
 import sass from 'node-sass';
 import postcss from 'postcss';
-import autoprefixer from 'autoprefixer-core';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
 export default function css () {
 	const srcFile = resolve('./src/css/index.scss');
@@ -10,7 +11,8 @@ export default function css () {
 	const time = new Date();
 
 	const processor = [
-		autoprefixer({ browsers: ['last 2 versions']})
+		autoprefixer({ browsers: ['last 2 versions']}),
+		cssnano()
 	]
 
 	const scss = sass.render({
