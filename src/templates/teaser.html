@@ -1,0 +1,112 @@
+---
+name: Teaser
+---
+<style scoped>
+	.teaser {
+		display: block;
+		box-sizing: border-box;
+		width: 50vw;
+		height: calc(50vw * 1.278195);
+		max-height: 680px;
+		padding-top: 80px;
+		background-size: cover;
+		background-blend-mode: multiply;
+		background-repeat: no-repeat;
+		text-decoration: none;
+		transform-style: preserve-3d;
+		transition: background-color .3s ease;
+	}
+
+
+	.teaser:hover {
+		background-color: var(--hex-blue);
+	}
+
+	.teaser:nth-child(4) {
+		background-image: url("./day-one.png");
+		transform: scale(3) translate3d(-17%, 100%, -1.5px);
+	}
+
+	.teaser:nth-child(5) {
+		background-image: url("./day-two.png");
+		transform: scale(4) translate3d(56%, 125%, -2px);
+
+	}
+
+	.teaser:nth-child(6) {
+		width: 70vw;
+		height: calc(70vw / 1.2);
+		max-height: 600px;
+		background-image: url("./day-three.png");
+		transform: scale(3.33333) translate3d(0px, 250%, -2.33333px);
+	}
+
+	.teaser:nth-child(7) {
+		background-image: url("./day-four.png");
+		transform: scale(1.66749) translate3d(-20%, 500%, -.66749px);
+	}
+
+	.headline {
+		margin: 0 0 0 60px;
+	}
+
+	.subheadline {
+		opacity: 0;
+		margin: 0 0 0 60px;
+		color: var(--hex-pale-lime);
+		transition: opacity .3s ease;
+	}
+
+	.teaser:hover .subheadline{
+		opacity: 1;
+	}
+
+	.caption {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 70%;
+		padding-bottom: 60px;
+		color: var(--hex-white);
+		transform: translateX(-50%);
+	}
+
+	.caption::after {
+		content: "";
+		position: absolute;
+		top: 16px;
+		left: 50%;
+		height: 1px;
+		width: 50%;
+		background-color: var(--hex-white);
+		transform: translateX(-50%);
+	}
+
+	.location {
+		display: inline-block;
+	}
+
+	.location:last-child::before {
+		content: "";
+		position: absolute;
+		left: 74%;
+		top: 8px;
+		width: 18px;
+		height: 18px;
+		border: 1px solid var(--hex-white);
+		background-color: transparent;
+		transform: rotate(45deg);
+	}
+
+</style>
+<a className={props.className ? `${style.teaser} ${props.className}` : style.teaser} href={props.url}>
+	<Headline Tag="h2" level="s" copy={props.copyh1} className={style.headline} />
+	<Headline Tag="h3" level="s" copy={props.copyh2} className={style.subheadline} />
+	<div className={style.caption}>
+		<strong className={style.location}>{props.from}</strong>
+		<strong className={style.location}>{props.to}</strong>
+	</div>
+</a>

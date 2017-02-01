@@ -1,0 +1,56 @@
+html {
+	text-size-adjust: 100%;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+object {
+	display: block;
+}
+
+
+img {
+	display: block;
+	border: 0;
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+}
+
+figure {
+	margin: 0;
+}
+
+blockquote {
+	margin: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+address {
+	font-style: normal;
+}
+iframe {
+	display: block;
+	border: 0;
+	background: transparent;
+}
+
+main {
+	display: block; // FIX IE 11
+}
