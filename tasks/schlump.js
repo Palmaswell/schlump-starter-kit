@@ -1,25 +1,10 @@
 import {resolve} from 'path';
 import schlump from 'schlump';
 
-export default function generatePages (flags) {
-	const src = 'src';
-	const dest = 'docs';
-	const staticsPath = resolve('./docs/');
-	const destPath = resolve('./docs/');
-	const scopedCSSPath = resolve('./src/css/_scoped.css');
-
-	const config = {
-		destStatics: './docs/',
-  		dest: './docs',
-  		scopedCss: './src/css/_scoped.css',
-  		cssVariables: true
-  	}
-
-
-	function generateStatics(config) {
-		const src = config.src || 'src';
-		const dest = config.dest || 'dist';
-		const opts = {
+const handleConfig = (config, fn) => {
+	const src = config.src || 'src';
+	const dest = config.dest || 'dist';
+	const options = {
 		srcPages: (config.srcPages || `${src}/pages`) + '/**/*.html',
 		srcTemplates: (config.srcTemplates || `${src}/templates`) + '/**/*.{html,svg,md}',
 		srcStatics: config.srcStatics || `${src}/statics`,
@@ -32,13 +17,18 @@ export default function generatePages (flags) {
 		scopedCss: config.scopedCss,
 		cssVariables: config.cssVariables,
 		templateImport: config.templateImport
-		};
-
-		return schlump.build(opts);
-	}
-
-	generateStatics(config);
-
+	};
+	return fn(options);
 }
 
-generatePages();
+export function generatePages () {
+	const config = {
+		destStatics: './docs',
+  		dest: './docs',
+  		scopedCss: './src/css/_scoped.css',
+  		cssVariables: true
+  	}
+
+  	handleConfig(config, schlump.build);
+}
+
