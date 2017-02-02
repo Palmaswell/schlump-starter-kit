@@ -9,6 +9,7 @@
   "scripts": {
     "start": "npm run build:watch",
     "build:css": "babel-node tasks/css.js --presets es2015,stage-2",
+    "build:schlump": "babel-node tasks/schlump.js --presets es2015,stage-2",
     "build:pages": "schlump --dest-statics=./docs/ --dest=./docs --scoped-css=./src/css/_scoped.css --css-variables",
     "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\"  --initial --command \"yarn build:pages\"",
     "build:watch": "babel-node tasks/watch.js --presets es2015,stage-2 && build:watch:pages"
