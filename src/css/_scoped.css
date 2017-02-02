@@ -1,24 +1,19 @@
-.src-pages-index-html-1877547710-parallax {
+.src-pages-index-html--68207082-parallax {
   height: 100vh;
-  max-height: 1680px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 1;
-  -webkit-overflow-scrolling: touch;}
-.src-pages-index-html-1877547710-container {
+  max-height: 1680px;}
+.src-pages-index-html--68207082-container {
   transform-style: preserve-3d;}
-.src-pages-index-html-1877547710-img {
+.src-pages-index-html--68207082-img {
   transform: scale(2) translate3d(-30%, 900%, -1px);}
-.src-pages-index-html-1877547710-figures {
+.src-pages-index-html--68207082-figures {
   transform: scale(1.66749) translate3d(60%, 860%, -.66749px);}
-.src-pages-index-html-1877547710-headline {
+.src-pages-index-html--68207082-headline {
   margin: 0;}
-.src-pages-index-html-1877547710-small {
+.src-pages-index-html--68207082-small {
   display: inline-block;
   margin-bottom: 50px;
   color: white;}
-.layout-318612908-thtml {
+.layout-1674784807-thtml {
   --hex-salmon: #F4728F;
   --hex-darkness: #191919;
   --hex-darkgray: #545E61;
@@ -38,12 +33,3 @@
   --text-copy: 2rem;
   --strong-copy: 2.4rem;
   font-size: 62.5%;}
-.layout-318612908-tbody {
-  background-color: #B5B6B5;
-  background-image: url("./noise-effect.png");
-  font-family: "roboto", sans-serif;
-  font-size: 2rem;
-  line-height: 1.4;
-  letter-spacing: .1rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;}
