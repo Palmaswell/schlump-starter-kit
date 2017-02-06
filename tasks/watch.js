@@ -21,8 +21,7 @@ export default function watchFolders () {
 
 	watch.createMonitor(src,  monitor => {
 		monitor.on('created', (file, stat) => {
-			console.log(`${date}: [Created File]
-			✌🏻 ${file}. ${stat}`);
+			console.log(`${date}: [Created File] ✌🏻 ${file}. ${stat}`);
 		});
 
 		monitor.on('changed', (file, curr, prev) => {
@@ -33,13 +32,11 @@ export default function watchFolders () {
 			findTask(srcHelpers, file, generatePages);
 
 
-			console.log(`${date}: [Changed File]
-			☝🏻 ${file}`);
+			console.log(`${date}: [Changed File] ☝🏻 ${file}`);
 		})
 
 		monitor.on('removed', (file, stat) => {
-			console.log(`${date}: [Removed File]
-			☝🏻 ${file} ${stat}`);
+			console.log(`${date}: [Removed File] ☝🏻 ${file} ${stat}`);
 		})
 	});
 }

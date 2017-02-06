@@ -18,13 +18,11 @@ export default function bundle () {
 		.require(src, {entry: true})
 		.bundle()
 		.on('error', err => {
-			console.error(`${date}: [Scripts Bundle]
-				😡  ${err}`);
+			console.error(`${date}: [Scripts Bundle] 😡  ${err}`);
 		})
 		.pipe(createWriteStream(dest))
 		.on('finish', () => {
-			console.log(`${date}: [Scripts Bundle]
-				✌🏻  were succesfully bundled`);
+			console.log(`${date}: [Scripts Bundle] ✌🏻  were succesfully bundled`);
 		});
 
 }
