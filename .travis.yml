@@ -9,4 +9,4 @@ notifications:
   email:
     on_success: never
 script:
-  - npm start
+  - npm run serve
