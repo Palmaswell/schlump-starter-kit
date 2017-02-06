@@ -8,8 +8,9 @@
   },
   "scripts": {
     "start": "npm run build:watch",
-    "build:css": "babel-node tasks/css.js --presets es2015,stage-2",
     "build:schlump": "babel-node tasks/schlump.js --presets es2015,stage-2",
+    "build:css": "babel-node tasks/css.js --presets es2015,stage-2",
+    "build:js": "babel-node tasks/bundle.js --presets es2015,stage-2",
     "build:watch": "babel-node tasks/watch.js --presets es2015,stage-2"
   },
   "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
@@ -20,7 +21,9 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.18.5",
+    "browserify": "^14.0.0",
     "chokidar-cli": "^1.2.0",
     "cross-env": "^3.1.3",
     "cssnano": "^3.10.0",

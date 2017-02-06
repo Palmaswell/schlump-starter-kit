@@ -1,0 +1,4 @@
+export default function foo () {
+	let dummy = 'this is a dummy js';
+	console.log(dummy);
+}

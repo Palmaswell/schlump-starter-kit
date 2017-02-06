@@ -25,11 +25,13 @@ export default function css () {
 		postcss(processor).process(scss.css).then(result => {
 			writeFile(buildFile, result, err => {
 				if (err) throw err;
-	            console.log(`${time}: [CSS build task] compilation was successfully completed`);
+	            console.log(`${time}: [CSS build]
+	            ✌🏻 compilation was successfully completed`);
 				});
 
 		}, err => {
-			console.error(`${time}: [PostCSS build task] ${err}`);
+			console.error(`${time}: [PostCSS build]
+			😡 ${err}`);
 		})
 	})
 }

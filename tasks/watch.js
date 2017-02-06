@@ -1,12 +1,14 @@
 import {resolve, dirname, basename, extname} from 'path';
-import watch from 'watch';
+import {template} from './schlump';
 import css from './css';
-import {generatePages} from './schlump';
+import js from './bundle';
+import watch from 'watch';
 
 export default function watchFolders () {
 	const date = new Date();
 	const src = resolve('./src/');
 	const srcCSS = `${src}/css`;
+	const srcJS = `${src}/scripts`;
 	const srcPages = `${src}/pages`;
 	const srcTemplates = `${src}/templates`;
 	const srcHelpers = `${src}/helpers`;
@@ -19,21 +21,25 @@ export default function watchFolders () {
 
 	watch.createMonitor(src,  monitor => {
 		monitor.on('created', (file, stat) => {
-			console.log(`${date}: [Created File] ${file}. ${stat}`);
+			console.log(`${date}: [Created File]
+			✌🏻 ${file}. ${stat}`);
 		});
 
 		monitor.on('changed', (file, curr, prev) => {
 			findTask(srcCSS, file, css, 'scss');
-			findTask(srcPages, file, generatePages);
-			findTask(srcTemplates, file, generatePages);
-			findTask(srcHelpers, file, generatePages);
+			findTask(srcJS, file, js, 'babel');
+			findTask(srcPages, file, template);
+			findTask(srcTemplates, file, template);
+			findTask(srcHelpers, file, template);
 
 
-			console.log(`${date}: [Changed File] ${file}`);
+			console.log(`${date}: [Changed File]
+			☝🏻 ${file}`);
 		})
 
 		monitor.on('removed', (file, stat) => {
-			console.log(`${date}: [Removed File] ${file} ${stat}`);
+			console.log(`${date}: [Removed File]
+			☝🏻 ${file} ${stat}`);
 		})
 	});
 }
