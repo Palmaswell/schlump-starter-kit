@@ -1,19 +1,12 @@
 ---
 name: Layout
 ---
-<style scoped>
-	html {
-		--device-xl      : 1680px;
-		--device-l       : 1024px;
-	}
-
-
-</style>
 <html lang="en-US">
 	<LayoutHead
 	title={props.layoutTitle}
 	description={props.layoutDescription} />
 	<body>
 		{props.children}
+		<script src="index.js" async></script>
 	</body>
 </html>

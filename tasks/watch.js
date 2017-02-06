@@ -1,5 +1,5 @@
 import {resolve, dirname, basename, extname} from 'path';
-import {template} from './schlump';
+import {generatePages} from './schlump';
 import css from './css';
 import js from './bundle';
 import watch from 'watch';
@@ -28,9 +28,9 @@ export default function watchFolders () {
 		monitor.on('changed', (file, curr, prev) => {
 			findTask(srcCSS, file, css, 'scss');
 			findTask(srcJS, file, js, 'babel');
-			findTask(srcPages, file, template);
-			findTask(srcTemplates, file, template);
-			findTask(srcHelpers, file, template);
+			findTask(srcPages, file, generatePages);
+			findTask(srcTemplates, file, generatePages);
+			findTask(srcHelpers, file, generatePages);
 
 
 			console.log(`${date}: [Changed File]
